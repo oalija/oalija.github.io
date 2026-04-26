@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPaint - Paint by Numbers</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="state-initial">
+    <div class="app-container">
+        <aside class="sidebar">
+            <header id="mainHeader">
+                <h1>🎨 PixelPaint</h1>
+                <p>Convierte tus fotos en arte numerado</p>
+            </header>
+            
+            <div id="creationControls">
+                <div class="control-group">
+                <label for="imageUpload" class="upload-btn">
+                    <span>SELECCIONAR FOTO</span>
+                    <input type="file" id="imageUpload" accept="image/png, image/jpeg, image/jpg, image/webp">
+                </label>
+            </div>
+            
+            <div class="control-group">
+                <label>Nivel de Detalle (Pixeles únicos)</label>
+                <div class="radio-group" id="colorModeOptions">
+                    <label class="radio-btn"><input type="radio" name="colorMode" value="8"> Fácil (8)</label>
+                    <label class="radio-btn"><input type="radio" name="colorMode" value="16" checked> Normal (16)</label>
+                    <label class="radio-btn"><input type="radio" name="colorMode" value="32"> Pro (32)</label>
+                </div>
+            </div>
+            
+                <button id="processBtn" class="primary-btn" disabled>Crear Lienzo Mágico</button>
+            </div>
+            
+            <div id="paletteContainer" class="palette-container hidden">
+                <h3>TU PALETA</h3>
+                <div id="palette" class="palette"></div>
+            </div>
+
+            <button id="restartBtn" class="primary-btn hidden" style="margin-top: auto;">Volver a crear</button>
+        </aside>
+        
+        <main class="main-content">
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Extrayendo colores y calculando regiones...</p>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="mainCanvas"></canvas>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js?v=2"></script>
+</body>
+</html>
